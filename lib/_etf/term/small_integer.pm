@@ -13,15 +13,11 @@ sub value {
 sub encode {
   my $self = shift();
   my $data = shift();
-  $self->debug("%s", $data);
-
-  if ($data) {
-    if ($data >= 0 || $data <= 255) {
-      return pack("CC", $self->value, $data);
-    }
-    else {
-      die("not valid small_integer");
-    }
+  if ($data >= 0 || $data <= 255) {
+    return pack("CC", $self->value, $data);
+  }
+  else {
+    die("not valid small_integer");
   }
 }
 
