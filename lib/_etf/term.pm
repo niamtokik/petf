@@ -4,7 +4,7 @@
 package _etf::term;
 use strict;
 use warnings;
-use parent -norequire, '_etf';
+use parent '_etf';
 
 sub new {
   my $class = shift();
@@ -16,8 +16,6 @@ sub new {
 sub my_type {
   my $self = shift();
   my $type = $self;
-  $type ~= s/^.*:://;
-  return $type;
 }
 
 sub encoded_tags {}

@@ -4,7 +4,7 @@
 package _etf::term::integer_ext;
 use strict;
 use warnings;
-use parent -norequire, '_etf::term';
+use parent '_etf::term';
 
 sub value {
   return 98;

@@ -4,7 +4,7 @@
 package _etf::term::atom_ext;
 use strict;
 use warnings;
-use parent -norequire, '_etf::term';
+use parent '_etf::term';
 
 sub value {
   return 100;
@@ -36,6 +36,7 @@ sub decode {
     my $ret = sprintf("%s", $atom);
     if ($rest) {
       return $ret, $rest;
+    }
     else {
       return $ret;
     }

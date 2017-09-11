@@ -4,7 +4,7 @@
 package _etf::term::float_ext;
 use strict;
 use warnings;
-use parent -norequire, '_etf::term';
+use parent '_etf::term';
 
 sub value {
   return 99;
@@ -13,5 +13,5 @@ sub value {
 sub encode {}
 sub decode {}
 
-1; }
+1;
 

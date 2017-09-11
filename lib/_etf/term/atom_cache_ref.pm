@@ -4,7 +4,7 @@
 package _etf::term::atom_cache_ref;
 use strict;
 use warnings;
-use parent -norequire, '_etf::term';
+use parent '_etf::term';
 
 sub value {
   return 82;

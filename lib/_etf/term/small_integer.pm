@@ -4,7 +4,7 @@
 package _etf::term::small_integer;
 use strict;
 use warnings;
-use parent -norequire, '_etf::term';
+use parent '_etf::term';
 
 sub value {
   return 97;
