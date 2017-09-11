@@ -1,0 +1,36 @@
+######################################################################
+#
+######################################################################
+package _etf::term::integer_ext;
+use strict;
+use warnings;
+use parent -norequire, '_etf::term';
+
+sub value {
+  return 98;
+}
+
+sub encode {
+  my $self = shift();
+  my $data = shift();
+  if ($data) {
+    return pack("CN", $self->value, $data);
+  }
+}
+
+sub decode {
+  my $self = shift();
+  my $data = shift();
+  if ($data) {
+    my ($type, $integer, $rest) = unpack("CNa*", $data);
+    if ($rest) {
+      return $integer, $rest;
+    }
+    else {
+      return $integer;
+    }
+  }
+}
+
+1;
+
