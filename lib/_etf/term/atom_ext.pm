@@ -4,10 +4,12 @@
 package _etf::term::atom_ext;
 use strict;
 use warnings;
+use parent '_etf::router';
 use parent '_etf::term';
 
 sub value {
-  return 100;
+  my $self = shift();
+  return $self->table->{"atom_ext"};
 }
 
 sub encode {
