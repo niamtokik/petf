@@ -4,11 +4,8 @@
 package _etf::term::small_tuple_ext;
 use strict;
 use warnings;
+use parent '_etf::router';
 use parent '_etf::term';
-
-sub value {
-  return 104;
-}
 
 sub encode {
   my $self = shift();

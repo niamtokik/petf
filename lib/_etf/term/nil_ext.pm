@@ -7,11 +7,6 @@ use warnings;
 use parent '_etf::router';
 use parent '_etf::term';
 
-sub value {
-  my $self = shift();
-  return $self->table_reverse->{"nil_ext"};
-}
-
 sub encode {
   my $self = shift();
   return pack("C", $self->value());

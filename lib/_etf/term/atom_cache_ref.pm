@@ -7,11 +7,6 @@ use warnings;
 use parent '_etf::router';
 use parent '_etf::term';
 
-sub value {
-  my $self = shift();
-  return $self->table_reverse->{"atom_cache_ref"};
-}
-
 sub encode {
   my $self = shift();
   my $data = shift();

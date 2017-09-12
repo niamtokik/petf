@@ -7,14 +7,10 @@ use warnings;
 use parent '_etf::router';
 use parent '_etf::term';
 
-sub value {
-  my $self = shift();
-  return $self->table_reverse->{"atom_ext"};
-}
-
 sub encode {
   my $self = shift();
   my $data = shift();
+
   if ($data) {
     my $len = length($data);
     if ($len > 0 && $len < 2**16) {

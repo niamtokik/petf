@@ -4,11 +4,8 @@
 package _etf::term::list_ext;
 use strict;
 use warnings;
+use parent '_etf::router';
 use parent '_etf::term';
-
-sub value {
-  return 108;
-}
 
 sub encode {
   my $self = shift();

@@ -4,11 +4,8 @@
 package _etf::term::small_integer;
 use strict;
 use warnings;
+use parent '_etf::router';
 use parent '_etf::term';
-
-sub value {
-  return 97;
-}
 
 sub encode {
   my $self = shift();

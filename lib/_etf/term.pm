@@ -5,6 +5,7 @@ package _etf::term;
 use strict;
 use warnings;
 use parent '_etf';
+use parent '_etf::router';
 
 sub new {
   my $class = shift();
@@ -18,11 +19,18 @@ sub my_type {
   my $type = $self;
 }
 
-sub encoded_tags {}
-sub decoded_tags {}
+sub name {
+  my $self = shift();
+  my $name = $self;
+  $name =~ s!=.*$!!;
+  $name =~ s!^.*::!!;
+  return $name;
+}
 
 sub value {
-  return -1;
+  my $self = shift();
+  my $name = $self->name();
+  $self->table_reverse->{ $name };
 }
 
 sub encode {
