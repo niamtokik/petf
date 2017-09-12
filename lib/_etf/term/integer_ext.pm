@@ -4,10 +4,12 @@
 package _etf::term::integer_ext;
 use strict;
 use warnings;
+use parent '_etf::router';
 use parent '_etf::term';
 
 sub value {
-  return 98;
+  my $self = shift();
+  return $self->table->{"integer_ext"};
 }
 
 sub encode {

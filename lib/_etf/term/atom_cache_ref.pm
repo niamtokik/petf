@@ -9,7 +9,7 @@ use parent '_etf::term';
 
 sub value {
   my $self = shift();
-  return $self->table->{"atom_cache_ref"};
+  return $self->table_reverse->{"atom_cache_ref"};
 }
 
 sub encode {

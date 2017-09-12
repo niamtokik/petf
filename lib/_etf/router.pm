@@ -13,6 +13,7 @@ sub new {
 }                                             
 
 sub table {
+  my $self = shift();
   return {  70 => "new_float_ext" 
          ,  77 => "bit_binary_ext" 
          ,  82 => "atom_cache_ref"
@@ -41,5 +42,10 @@ sub table {
          , 119 => "small_atom_utf8_ext" 
          };
 }
+
+sub table_reverse {
+  my $self = shift();
+  return { reverse %{ $self->table() } }; 
+} 
 
 1;
