@@ -4,20 +4,22 @@
 package _etf::router;                         
 use strict;
 use warnings;
+use _etf::term;
+use _etf::term::atom_ext;
 
-sub new {                                     
-  my $class = shift();                        
-  my $self = { };                             
-  bless($self, $class);                       
-  return $self;                               
-}                                             
+sub new {
+  my $class = shift(); 
+  my $self = { };
+  bless($self, $class);
+  return $self;
+}
 
 sub table {
   my $self = shift();
   return {  70 => "new_float_ext" 
          ,  77 => "bit_binary_ext" 
          ,  82 => "atom_cache_ref"
-         ,  97 => "small_integer"
+         ,  97 => "small_integer_ext"
          ,  98 => "integer_ext"
          ,  99 => "float_ext" 
          , 100 => "atom_ext"
@@ -47,5 +49,26 @@ sub table_reverse {
   my $self = shift();
   return { reverse %{ $self->table() } }; 
 } 
+
+sub is {
+  my $self = shift();
+  my $term = shift();
+  my $data = shift();
+  if ($data == $self->table_reverse->{$term}) {
+    return $self->table()->{$data};
+  }
+  return 0;
+}
+
+sub route {
+  my $self = shift();
+  my $data = shift();
+  if ($self->table()->{$data}) {
+    return $self->table()->{$data};
+  }
+  else {
+    return 0;
+  }
+}
 
 1;
